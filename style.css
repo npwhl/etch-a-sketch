@@ -1,0 +1,26 @@
+* {
+    margin: 0; 
+    padding: 0;
+}
+
+body {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+#easel {
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    height: 1000px; 
+    width: 1000px;
+    
+}
+
+.square {
+    border: 1px solid black;
+    width: 0; 
+    height: 0;
+}
