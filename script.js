@@ -50,3 +50,17 @@ gridBtn.addEventListener("click", () => {
     })
 });
 
+const randBtn = document.querySelector("#random-color");
+randBtn.addEventListener("click", () => {
+    squares.forEach((square) => {
+        square.addEventListener("mouseover", () => {
+            let randRed = Math.round(Math.random() * 255);
+            let randBlue = Math.round(Math.random() * 255);
+            let randGreen = Math.round(Math.random() * 255);
+            let randColor = `rgb(${randRed} ${randBlue} ${randGreen})`;
+            if(!square.classList.contains("filled")) {
+                square.style.backgroundColor = randColor;
+            }
+        })
+    })
+})
