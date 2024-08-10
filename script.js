@@ -1,5 +1,5 @@
 const easel = document.querySelector("#easel");
-const GRID_HEIGHT = 800;
+const GRID_HEIGHT = 750;
 let gridCount = 0; 
 easel.style.height = `${GRID_HEIGHT}px`;
 easel.style.width = `${GRID_HEIGHT}px`;
@@ -62,28 +62,17 @@ function generateRandomColor(event) {
 
 const randBtn = document.querySelector("#random-color");
 let randColor = false;
-randBtn.addEventListener("click", () => {
+function toggleRandomColor() {
     if(!randColor) {
         squares.forEach((square) => {
-            square.addEventListener("mouseenter", generateRandomColor, false);
+            square.addEventListener("mouseenter", generateRandomColor, true);
         })
         randColor = true;
     } else {
         squares.forEach((square) => {
-            square.removeEventListener("mouseenter", generateRandomColor, false);
+            square.removeEventListener("mouseenter", generateRandomColor, true);
         })
         randColor = false;
     }
-})
-
-const opacityBtn = document.querySelector("#opacity");
-opacityBtn.addEventListener("click", () => {
-    squares.forEach((square) => {
-        if(!square.classList.contains("filled")) {
-            square.style.background = `rgb(0 0 0 / 0)`;
-        }
-        square.addEventListener("mouseover", () => {
-            square.style.background = `rgb(0 0 0 / 0.3)`;
-        })
-    })
-});
+}
+randBtn.addEventListener("click", toggleRandomColor);
