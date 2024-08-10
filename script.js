@@ -50,17 +50,28 @@ gridBtn.addEventListener("click", () => {
     })
 });
 
+function generateRandomColor(event) {
+    let randRed = Math.round(Math.random() * 255);
+    let randBlue = Math.round(Math.random() * 255);
+    let randGreen = Math.round(Math.random() * 255);
+    let randColor = `rgb(${randRed} ${randBlue} ${randGreen})`;
+    if(!event.currentTarget.classList.contains("filled")) {
+        event.currentTarget.style.backgroundColor = randColor;
+    }
+}
+
 const randBtn = document.querySelector("#random-color");
+let randColor = false;
 randBtn.addEventListener("click", () => {
-    squares.forEach((square) => {
-        square.addEventListener("mouseover", () => {
-            let randRed = Math.round(Math.random() * 255);
-            let randBlue = Math.round(Math.random() * 255);
-            let randGreen = Math.round(Math.random() * 255);
-            let randColor = `rgb(${randRed} ${randBlue} ${randGreen})`;
-            if(!square.classList.contains("filled")) {
-                square.style.backgroundColor = randColor;
-            }
+    if(!randColor) {
+        squares.forEach((square) => {
+            square.addEventListener("mouseover", generateRandomColor);
         })
-    })
+        randColor = true;
+    } else {
+        squares.forEach((square) => {
+            square.removeEventListener("mouseover", generateRandomColor);
+        })
+        randColor = false;
+    }
 })
