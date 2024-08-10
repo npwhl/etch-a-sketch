@@ -65,13 +65,25 @@ let randColor = false;
 randBtn.addEventListener("click", () => {
     if(!randColor) {
         squares.forEach((square) => {
-            square.addEventListener("mouseover", generateRandomColor);
+            square.addEventListener("mouseenter", generateRandomColor, false);
         })
         randColor = true;
     } else {
         squares.forEach((square) => {
-            square.removeEventListener("mouseover", generateRandomColor);
+            square.removeEventListener("mouseenter", generateRandomColor, false);
         })
         randColor = false;
     }
 })
+
+const opacityBtn = document.querySelector("#opacity");
+opacityBtn.addEventListener("click", () => {
+    squares.forEach((square) => {
+        if(!square.classList.contains("filled")) {
+            square.style.background = `rgb(0 0 0 / 0)`;
+        }
+        square.addEventListener("mouseover", () => {
+            square.style.background = `rgb(0 0 0 / 0.3)`;
+        })
+    })
+});
