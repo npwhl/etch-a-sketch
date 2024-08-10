@@ -1,9 +1,10 @@
 const easel = document.querySelector("#easel");
-const GRID_HEIGHT = 600;
+const GRID_HEIGHT = 550;
 let gridCount = 0; 
 easel.style.height = `${GRID_HEIGHT}px`;
 easel.style.width = `${GRID_HEIGHT}px`;
 let squares;
+let rowNumber;
 
 function createGrid(rowSize) {
     let squareDimen = 1/(rowSize)*100;
@@ -20,6 +21,7 @@ function createGrid(rowSize) {
         easel.appendChild(square);
     }
     squares = document.querySelectorAll(".square");
+    rowNumber = rowSize;
 }
 
 createGrid(16);
@@ -31,7 +33,7 @@ function clearGrid() {
 }
 
 const resizeBtn = document.querySelector("#resize");
-resizeBtn.addEventListener("click", () => {
+resizeBtn.addEventListener("click", (e) => {
     let size = +(prompt("What do you want the new row size to be? (max = 100)"));
     if(size === null) {
         return;
@@ -50,29 +52,37 @@ gridBtn.addEventListener("click", () => {
     })
 });
 
-function generateRandomColor(event) {
+function generateRandomColor(e) {
     let randRed = Math.round(Math.random() * 255);
     let randBlue = Math.round(Math.random() * 255);
     let randGreen = Math.round(Math.random() * 255);
     let randColor = `rgb(${randRed} ${randBlue} ${randGreen})`;
-    if(!event.currentTarget.classList.contains("filled")) {
-        event.currentTarget.style.backgroundColor = randColor;
+    if(!e.currentTarget.classList.contains("filled")) {
+        e.currentTarget.style.backgroundColor = randColor;
     }
 }
 
 const randBtn = document.querySelector("#random-color");
 let randColor = false;
-function toggleRandomColor() {
+function toggleRandomColor(e) {
     if(!randColor) {
         squares.forEach((square) => {
             square.addEventListener("mouseenter", generateRandomColor, true);
         })
         randColor = true;
+        e.currentTarget.style.backgroundColor = "rgb(248 248, 248)";
     } else {
         squares.forEach((square) => {
             square.removeEventListener("mouseenter", generateRandomColor, true);
         })
         randColor = false;
+        e.currentTarget.style.backgroundColor = "white";
     }
 }
 randBtn.addEventListener("click", toggleRandomColor);
+
+const clearBtn = document.querySelector("#clear");
+clearBtn.addEventListener("click", () => {
+    clearGrid();
+    createGrid(rowNumber);
+})
