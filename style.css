@@ -6,7 +6,8 @@
 body {
     min-height: 100vh;
     display: flex; 
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
 }
 
@@ -17,6 +18,7 @@ body {
     align-items: center;
     height: 1000px; 
     width: 1000px;  
+    border: 2px solid black;
 }
 
 .square {
@@ -24,4 +26,8 @@ body {
     height: 50px;
     width: 50px;
     flex: 0 0 auto;
+}
+
+.filled {
+    background-color: black;
 }

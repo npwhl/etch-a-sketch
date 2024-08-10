@@ -18,3 +18,11 @@ function createGrid(rowSize) {
 
 createGrid(16);
 
+const squares = document.querySelectorAll(".square");
+squares.forEach((square) => {
+    square.addEventListener("mouseenter", () => {
+        square.classList.add("filled");
+    });
+});
+
+
