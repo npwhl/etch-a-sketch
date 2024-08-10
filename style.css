@@ -31,3 +31,7 @@ body {
 .filled {
     background-color: black;
 }
+
+.grid-line {
+    border: 1px solid gray;
+}

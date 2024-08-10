@@ -1,6 +1,5 @@
 const easel = document.querySelector("#easel");
 const GRID_HEIGHT = 800;
-let BORDER_WIDTH = 1;
 let gridCount = 0; 
 easel.style.height = `${GRID_HEIGHT}px`;
 easel.style.width = `${GRID_HEIGHT}px`;
@@ -14,7 +13,7 @@ function createGrid(rowSize) {
         square.classList.add("square");
         square.style.height = `${squareDimen}%`;
         square.style.width = `${squareDimen}%`;
-        square.style.border = `${BORDER_WIDTH}px solid gray`;
+        square.classList.add("grid-line");
         square.addEventListener("mouseenter", () => {
             square.classList.add("filled");
         });
@@ -44,4 +43,10 @@ resizeBtn.addEventListener("click", () => {
     createGrid(size);
 });
 
+const gridBtn = document.querySelector("#toggle-grid");
+gridBtn.addEventListener("click", () => {
+    squares.forEach((square) => {
+        square.classList.toggle("grid-line");
+    })
+});
 
