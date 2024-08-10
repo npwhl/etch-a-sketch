@@ -1,13 +1,3 @@
-@font-face {
-    font-family: 'Rondo'; 
-    src: url('OPTIRondo-Bold.otf');
-}
-
-@font-face {
-    font-family: 'Roboto';
-    src: url('OpenSans-BoldItalic.ttf');
-}
-
 * {
     margin: 0; 
     padding: 0;
@@ -30,13 +20,14 @@ body {
     height: 950px;
     width: 1200px;
     border-radius: 18px;
-    box-shadow: inset 0px 0px 20px 1px rgb(210, 182, 182);
+    box-shadow: inset 0px 0px 20px 1px rgb(222, 201, 201);
 }
 
 #logo {
-    font-family: 'Rondo', sans-serif;
+    font-family: 'rondo-mn', sans-serif;
+    font-weight: 500; 
     color: rgb(248, 214, 19);
-    font-size: 50px;
+    font-size: 65px;
     align-self: stretch;
     text-align: center;
     margin: 25px;
@@ -85,20 +76,24 @@ body {
 }
 
 #user {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     color: rgba(248, 214, 19, 0.6);
     font-size: 18px;
     margin: 20px;
     text-decoration: none;
+    font-weight: 800;
+    font-style: italic;
 }
 
 #resize, #random-color {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    font-style: italic;
     box-sizing: border-box; 
     border: 10px solid rgb(237, 237, 237);
     border-radius: 75px;
     background-color: white;
-    color: rgb(53, 53, 53);
+    color: rgb(63, 63, 63);
     font-size: 24px;
     padding: 10px;
     height: 150px;

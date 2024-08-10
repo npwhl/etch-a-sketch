@@ -5,5 +5,5 @@ motion. A small project to practice Javascript Event tracking and CSS formatting
 [Live Demo](https://npwhl.github.io/etch-a-sketch)
 
 Fonts used: 
-[Rondo](https://fontmeme.com/fonts/rondo-bold-font/) by OPTIFONT
-[Open Sans](https://www.1001fonts.com/open-sans-font.html) by Steve Matteson
+[Rondo MN](https://fonts.adobe.com/fonts/rondo-mn) by OPTIFONT and
+[Open Sans](https://fonts.google.com/specimen/Open+Sans) by Steve Matteson
