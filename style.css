@@ -3,6 +3,11 @@
     src: url('OPTIRondo-Bold.otf');
 }
 
+@font-face {
+    font-family: 'Roboto';
+    src: url('OpenSans-BoldItalic.ttf');
+}
+
 * {
     margin: 0; 
     padding: 0;
@@ -11,17 +16,26 @@
 body {
     min-height: 100vh;
     display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+#toy {
+    display: flex; 
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    background-color: #d7272c;
+    height: 900px;
+    width: 1100px;
 }
 
 #title {
     font-family: 'Rondo', sans-serif;
-    background-color: #d7272c;
     color: rgb(248, 214, 19);
     align-self: stretch;
     text-align: center;
+    margin: 25px;
 }
 
 #easel {
@@ -29,9 +43,10 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    flex: 0 0 auto;
     height: 1000px; 
     width: 1000px;  
-    border: 2px solid black;
+    border: 3px solid black;
 }
 
 .square {
@@ -39,6 +54,7 @@ body {
     height: 50px;
     width: 50px;
     flex: 0 0 auto;
+    background-color: rgb(212, 212, 212);
 }
 
 .filled {
@@ -47,4 +63,23 @@ body {
 
 .grid-line {
     border: 1px solid gray;
+}
+
+#options {
+    align-self: stretch;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+#resize, #random-color {
+    font-family: 'Roboto';
+    border: 1px solid lightgray;
+    border-radius: 75px;
+    background-color: white;
+    color: rgb(53, 53, 53);
+    font-size: 16px;
+    height: 150px;
+    width: 150px;
+    margin: 25px;
 }

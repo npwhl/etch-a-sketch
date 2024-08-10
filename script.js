@@ -1,5 +1,5 @@
 const easel = document.querySelector("#easel");
-const GRID_HEIGHT = 750;
+const GRID_HEIGHT = 600;
 let gridCount = 0; 
 easel.style.height = `${GRID_HEIGHT}px`;
 easel.style.width = `${GRID_HEIGHT}px`;
